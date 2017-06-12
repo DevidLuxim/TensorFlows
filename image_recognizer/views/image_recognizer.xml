@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+                <record model="ir.ui.view" id="image_form_view">
+            <field name="name">image_recognizer.form</field>
+            <field name="model">image_recognizer.images</field>
+            <field name="arch" type="xml">
+                <form string="Course Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="imager" widget='image' filename="image_filename" options='{"size": [150, 140]}'  />-->
+                            <!--<field name="imager" widget='url' />-->
+                            <field name="description" />
+                            <field name="probability" widget="progressbar"/>
+                            <!--<field widget="binary" height="64" name="imager" filename="image_filename" />-->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- window action -->
+        <!--
+            The following tag is an action definition for a "window action",
+            that is an action opening a view or a set of views
+        -->
+        <record model="ir.actions.act_window" id="image_list_action">
+            <field name="name">image_recognizer</field>
+            <field name="res_model">image_recognizer.images</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create first image
+                </p>
+            </field>
+        </record>
+
+        <!-- top level menu: no parent -->
+        <menuitem id="main_image_recognizer_menu" name="Image Recognizer"/>
+        <!-- A first level in the left side menu is needed
+             before using action= attribute -->
+        <menuitem id="image_recognizer_menu" name="Open Images"
+                  parent="main_image_recognizer_menu"/>
+        <!-- the following menuitem should appear *after*
+             its parent openacademy_menu and *after* its
+             action course_list_action -->
+        <menuitem id="image_menu" name="image_recognizer" parent="image_recognizer_menu"
+                  action="image_list_action"/>
+        <!-- Full id location:
+             action="openacademy.course_list_action"
+             It is not required when it is the same module -->
+    </data>
+</openerp>
