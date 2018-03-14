@@ -4,8 +4,6 @@
 
     'summary': "Image recognizer",
 
-    'description': "Module that recognize photos using Tensor Flow library",
-
     'author': "Luxim",
     'website': "https://www.luxim.si",
     'version': '0.1',
