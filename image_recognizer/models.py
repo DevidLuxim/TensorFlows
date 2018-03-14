@@ -25,18 +25,8 @@ class Importimage (models.Model):
     datas = fields.Char()
     description = fields.Char()
     image_filename = fields.Char("DONDOLO")
-    probability = fields.Float(string="Probability", compute='_probability')
-    proba = fields.Float()
-    @api.depends('probability')
-    def _probability(self):
-        for r in self:
-            if not r.probability:
-                r.probability = 0.0
-            else:
-                r.proba = 100.0 * r.probability
 
     @api.onchange('imager')
-
     def _onchange_imager(self):
         datas = self.imager
 
@@ -208,3 +198,5 @@ class Importimage (models.Model):
 
         if datas:
             self.name, self.probability =run_inference_on_image(image)
+
+    probability = fields.Float(string="Probability", store=True)
