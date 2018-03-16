@@ -9,7 +9,7 @@
     'license': 'LGPL-3',
     'version': '0.1',
     'category': 'AI',
-    'images': ["static/description/icon.png"],
+    'images': ["static/description/thumbnail.png"],
     'price': 39.00,
     'currency': 'EUR',
 
