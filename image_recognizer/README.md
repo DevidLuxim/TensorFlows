@@ -2,7 +2,6 @@ This module recognize the photos you upload.
 ============================================
 ![picture](static/description/icon.png)
 
-
 This want to be the first step towards integrating a Deep Learning System into an ERP
 
 With this example I would like to show the potential of integrating a deeplearnig system into an ERP.
