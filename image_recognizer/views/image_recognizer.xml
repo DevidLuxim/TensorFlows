@@ -8,12 +8,11 @@
                 <form string="Course Form">
                     <sheet>
                         <group>
-                            <field name="name"/>
-                            <field name="imager" widget='image' filename="image_filename" options='{"size": [150, 140]}'  />-->
-                            <!--<field name="imager" widget='url' />-->
-                            <field name="description" />
+                            <field name="name" bold="on" size="double"/>
+                            <!--<field name="description" />-->
                             <field name="probability" widget="progressbar"  />
-                            <!--<field widget="binary" height="64" name="imager" filename="image_filename" />-->
+                            <div><field name="imager" widget='image' filename="image_filename" options='{"size": [150, 140]}'  />
+                             </div>
                         </group>
                     </sheet>
                 </form>
@@ -25,11 +24,8 @@
             <field name="arch" type="xml">
                 <tree string="Image Tree">
                             <field name="name"/>
-                            <!--<field name="imager" widget='image' filename="image_filename" options='{"size": [150, 140]}'  />-->
-                            <!--<field name="imager" widget='url' />-->
-                            <field name="description" />
+                            <!--<field name="description" />-->
                             <field name="probability" widget="progressbar" />
-                            <!--<field widget="binary" height="64" name="imager" filename="image_filename" />-->
                 </tree>
             </field>
         </record>
@@ -47,7 +43,7 @@
 
         <menuitem id="main_image_recognizer_menu" name="Image Recognizer"/>
 
-        <menuitem id="image_recognizer_menu" name="Open Images"
+        <menuitem id="image_recognizer_menu" name="Images"
                   parent="main_image_recognizer_menu"/>
 
         <menuitem id="image_menu" name="Image Recognizer" parent="image_recognizer_menu"

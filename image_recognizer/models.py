@@ -20,10 +20,10 @@ from openerp import models, fields, api
 
 class Importimage (models.Model):
     _name = 'image_recognizer.images'
-    name = fields.Char(string="Title", required=True)
+    name = fields.Char(string="Photo recognition", required=True)
     imager = fields.Binary()
     datas = fields.Char()
-    description = fields.Char()
+    # description = fields.Char()
     image_filename = fields.Char("DONDOLO")
 
     @api.onchange('imager')
@@ -199,4 +199,4 @@ class Importimage (models.Model):
         if datas:
             self.name, self.probability =run_inference_on_image(image)
 
-    probability = fields.Float(string="Probability", store=True)
+    probability = fields.Float(string="Prediction accuracy", store=True)
