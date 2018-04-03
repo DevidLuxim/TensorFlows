@@ -10,7 +10,7 @@
     'version': '0.1',
     'category': 'AI',
     'images': ["static/description/thumbnail.png"],
-    'price': 39.00,
+    'price': 19.00,
     'currency': 'EUR',
 
     # any module necessary for this one to work co¸rrectly
